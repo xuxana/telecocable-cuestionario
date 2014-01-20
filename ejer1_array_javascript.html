@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Recorrer array dos dimensiones javascript</title>
+</head>
+<body>
+	<script type="text/javascript">
+	//DEFINICION DE ARRAY
+	a_usuarios=new Array(['Luis', 'Pérez', '00000000-Z'], ['José', 'Sánchez', '11111111-Y']);	
+	
+	//GENERA TABLA 
+	document.write("<table cellpadding='5' cellspacing='0' border='1'>"); 
+	//RECORRE EL PRIMER ARRAY  QUE CONTIENE TODOS LOS USUARIOS
+	for (i=0, long1=a_usuarios.length; i<long1; i++){ 
+		document.write("<tr>");
+		document.write("<td colspan='3'><strong>Usuario " + i + "</strong></td>");
+		document.write("</tr>");
+		document.write("<tr>");
+
+		//RECORRE EL SEGUNDO ARRAY QUE CONTIENE LOS DATOS DE CADA USUARIO
+		for (j=0, long2=a_usuarios[i].length; j<long2; j++){ 
+			document.write("<td>" + a_usuarios[i][j] + "</td>");
+		} 
+		document.write("</tr>");
+	} 
+	document.write("</table>") ;		
+
+	</script>
+</body>
+</html>

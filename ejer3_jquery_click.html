@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Jquery - click de boton para cambiar texto de span</title>
+	<!-- TRAEMOS LA  LIBRERÍA DE JQUERY DEL CDN DE GOOGLE -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+</head>
+<body>
+	<div id='message'><div><span>Welcome</span> <span>user</span></div><button>Ok</button></div>
+	<script type="text/javascript">
+	//CUANDO EL DOCUMENTO SE HA TERMINADO DE CARGAR
+	$(document).ready(function($) 
+	{
+		//CAPTURAMOS EL EVENTO ONCLICK DEL BOTÓN DE LA PÁGINA
+		$('button').click(function() {
+
+			//CAMBIAMOS EL TEXTO DEL PRIMER SPAN DENTRO DEL DIV CONTENIDO POR EL DIV CON id message
+			$('#message > div span:first-child').text('Bienvenido');			
+		});
+	});
+	</script>
+</body>
+</html>

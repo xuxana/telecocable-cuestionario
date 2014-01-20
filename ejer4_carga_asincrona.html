@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Carga asíncrona de javascript</title>
+
+<!-- 1-. CON ATRIBUTO defer, CARGAMOS EL SCRIPT AL FINALIZAR LA CARGA DE LA PÁGINA. HAY NAVEGADORES ANTIGUOS QUE NO LO SOPORTAN  -->
+	<script defer type="text/javascript" src="js/ejer4_funciones.js"></script>
+	
+<!-- 2-. CON ATRIBUTO async, A PARTIR DE HTML5 CARGAMOS EL SCRIPT AL MISMO TIEMPO SIN DETENER LA CARGA DEL RESTO DE ELEMENTOS.
+	 NO SOPORTADO POR NAVEGADORES COMO IE9, IE8 Y ANTERIORES - OPERA MINI Y OTRAS VERSIONES ANTIGUAS   -->
+	<script async type="text/javascript" src="js/ejer4_funciones.js"></script>
+
+<!-- 3-. TAMBIÉN PODEMOS DEFINIR UNA FUNCIÓN DE JAVASCRIPT QUE LLAME A UN JS PASADO COMO PARÁMETRO COMO LO HARÍA UN INCLUDE DE PHP
+LUEGO LLAMARÍAMOS A ESTA FUNCIÓN AL FINAL DEL BODY DEL DOCUMENTO -->
+	<script type="text/javascript">
+		function cargaScript (js) {
+			var elementoScript = document.createElement("script"); 
+			elementoScript.type = "text/javascript"; 
+			elementoScript.src = js; 
+			document.getElementsByTagName("head")[0].appendChild(elementoScript);
+		}
+	</script>
+</head>
+<body>
+	<!-- CONTENIDO DE LA PÁGINA -->
+
+	<!-- LLAMADA PARA LA CARGA DEL ARCHIVO JS -->
+	<script type="text/javascript">
+		cargaScript("js/ejer4_funciones.js");
+	</script>
+</body>
+</html>
